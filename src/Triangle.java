@@ -1,14 +1,12 @@
-public class Quad implements Shape{
+public class Triangle implements Shape{
     private int a;
+    private int h;
     private String color;
 
-    public Quad(int a, String color) {
+    public Triangle(int a, int h, String color) {
         this.a = a;
+        this.h = h;
         this.color = color;
-    }
-    @Override
-    public String toString() {
-        return printNameShape();
     }
 
     public int getA() {
@@ -18,25 +16,40 @@ public class Quad implements Shape{
     public void setA(int a) {
         this.a = a;
     }
+
+    public int getH() {
+        return h;
+    }
+
+    public void setH(int h) {
+        this.h = h;
+    }
+
     public String getColor() {
         return color;
     }
+
     public void setColor(String color) {
         this.color = color;
     }
 
     @Override
+    public String toString() {
+        return printNameShape();
+    }
+
+    @Override
     public String printNameShape() {
-        return "Quad";
+        return "Triangle";
     }
 
     @Override
     public double getArea() {
-        return Math.pow(a, 2);
+        return Math.round((a / 2.0) * h);
     }
 
     @Override
     public String getColors() {
-        return getColor(); // must be Brown
+        return getColor();
     }
 }

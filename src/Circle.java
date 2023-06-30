@@ -24,6 +24,9 @@ public class Circle implements Shape{
     public double getPI() {
         return PI;
     }
+    public String getColor() {
+        return color;
+    }
 
     public void setColor(String color) {
         this.color = color;
@@ -37,11 +40,7 @@ public class Circle implements Shape{
 
     @Override
     public double getArea() {
-        return PI*Math.pow(r, 2);
-    }
-
-    public String getColor() {
-        return color;
+        return Math.round(PI*Math.pow(r, 2));
     }
 
     @Override
